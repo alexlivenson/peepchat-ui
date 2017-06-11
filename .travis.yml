@@ -1,21 +1,22 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-
+  - $HOME/.npm
 before_install:
-  - npm config set spin false
-  - npm install -g phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-
+- npm install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: pd5G9cJ6o5BYpnIxicmjX5vIk5yJDVLCVArSpTRAQwJV5sp9mQLgwh7StdKOaFUAu6gJ9G5clYUbocuYOzxIpb9wWZOnNqZkA8AKYHvbSmQndlwOE8DkEqtLs8HNTousF1ZQNT1SSDIB6z6S0y+2xQqlb8RY0dXo6mJ4a0R7RhXdDxHb03a1mkGVMG3N/kDsEUa+vjugXW8COFidDvzhvqi6OAq4xZcVQhzBenvJk9JqKX1L9FNuqRr42AHY1rplrJ5r4nj4OH3KzgkT79ItUjMkaKNHvt2Q1cFHuZ8m3lK1V6nMnMP3o0MsoVIwgldq1KFYvsAJRH8RcDbmE+75VVI6T6SbnQSPCgiPY1VbcWF4YMl3sdNDr5JNYfF8YBTiHGBsaN6s57uXmdDD2KZSl2XsVrM3W8qox0gi/7YTZ4f3TuoCLXxmnNC9KR9jdl44haYS38dbff6BagEgrRJXTEAuynhN/cyyw/BA8Wt0HiI+NkNirhTDGSJDH2QSC1fg8IiAH5/uJR88Ti7m+2XG/wdW2p+iDHbXDfh1C0o9MzI19dSIUuycbaXKpvVrhjcllsNg23zPslhDp2gWmAIKwUKM6/jH935RKjPG2QqH1EnrHnkHlgG6alUrXG7Zi2M0NW2VuPw4zVfC8FWOqC9pNi/WLoA82s4JnYq4DOp3q50=
+  app: dry-earth-81789
+  on:
+    repo: alexlivenson/peepchat-ui

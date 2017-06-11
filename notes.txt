@@ -1,0 +1,2 @@
+gem install travis
+travis setup heroku
